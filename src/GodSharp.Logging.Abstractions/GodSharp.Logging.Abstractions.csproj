@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>GodSharp.Logging.Abstractions</AssemblyName>
+    <Title>GodSharp.Logging.Abstractions</Title>
+    <PackageId>GodSharp.Logging.Abstractions</PackageId>
+    <PackageTags>GodSharp.Logging.Abstractions,GodSharp.Logging,GodSharp</PackageTags>
+    <Description>GodSharp logging libary for C#</Description>
+  </PropertyGroup>
+  <Import Project="..\..\build\common.props" />
+</Project>

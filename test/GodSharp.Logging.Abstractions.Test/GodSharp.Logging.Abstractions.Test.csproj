@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>GodSharp.Logging.Abstractions.Test</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <PackageReference Include="xunit" Version="1.9.2" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <PackageReference Include="xunit" Version="1.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <PackageReference Include="xunit" Version="2.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <PackageReference Include="xunit" Version="2.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net47'">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <PackageReference Include="xunit" Version="2.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="xunit" Version="2.3.1" />
+  </ItemGroup>
+  <!--<ItemGroup>
+    <DotNetCliToolReference Include="xunit.analyzers" Version="0.7.0" />
+    <PackageReference Include="xunit.runner.console" Version="2.3.1" />
+  </ItemGroup>-->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\GodSharp.Logging.Abstractions\GodSharp.Logging.Abstractions.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\..\build\common.props" />
+</Project>

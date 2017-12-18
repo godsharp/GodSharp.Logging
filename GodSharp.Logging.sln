@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D073B8F-6E0C-4C3A-9039-3B62576BA64B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{87F12F23-6414-4069-AF1A-34829D196C6A}"
+	ProjectSection(SolutionItems) = preProject
+		build\build.bat = build\build.bat
+		build\common.props = build\common.props
+		build\version.props = build\version.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0E418466-D675-44BF-95F7-FCB6B50C2728}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CDEA361C-9673-4588-9853-36DC6C52CD85}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.gitlab-ci.yml = .gitlab-ci.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GodSharp.Logging.Abstractions", "src\GodSharp.Logging.Abstractions\GodSharp.Logging.Abstractions.csproj", "{2C3FD0E4-56D3-41E6-9F98-0E972B07F86A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GodSharp.Logging.NLog", "src\GodSharp.Logging.NLog\GodSharp.Logging.NLog.csproj", "{BD5738FD-F5D0-4C52-9B1F-9B9DFD80380E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C3FD0E4-56D3-41E6-9F98-0E972B07F86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3FD0E4-56D3-41E6-9F98-0E972B07F86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3FD0E4-56D3-41E6-9F98-0E972B07F86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3FD0E4-56D3-41E6-9F98-0E972B07F86A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5738FD-F5D0-4C52-9B1F-9B9DFD80380E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5738FD-F5D0-4C52-9B1F-9B9DFD80380E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5738FD-F5D0-4C52-9B1F-9B9DFD80380E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5738FD-F5D0-4C52-9B1F-9B9DFD80380E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C3FD0E4-56D3-41E6-9F98-0E972B07F86A} = {0D073B8F-6E0C-4C3A-9039-3B62576BA64B}
+		{BD5738FD-F5D0-4C52-9B1F-9B9DFD80380E} = {0D073B8F-6E0C-4C3A-9039-3B62576BA64B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F35E8B27-FEE6-4809-8D06-0976E09B91BD}
+	EndGlobalSection
+EndGlobal

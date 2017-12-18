@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>GodSharp.Logging.NLog</AssemblyName>
+    <Title>GodSharp.Logging.NLog</Title>
+    <PackageId>GodSharp.Logging.NLog</PackageId>
+    <PackageTags>GodSharp.Logging.NLog,GodSharp.Logging,NLog,GodSharp</PackageTags>
+    <Description>GodSharp logging libary for C#</Description>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <PackageReference Include="NLog" Version="4.4.12" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="NLog" Version="5.0.0-beta11" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GodSharp.Logging.Abstractions\GodSharp.Logging.Abstractions.csproj" />
+  </ItemGroup>
+  <Import Project="..\..\build\common.props" />
+</Project>
