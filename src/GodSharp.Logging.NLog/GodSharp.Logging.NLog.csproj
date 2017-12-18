@@ -6,14 +6,16 @@
     <PackageTags>GodSharp.Logging.NLog,GodSharp.Logging,NLog,GodSharp</PackageTags>
     <Description>GodSharp logging libary for C#</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GodSharp.Logging.Abstractions" Version="1.0.0-preview1" />
+  </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <Reference Include="System" />
     <PackageReference Include="NLog" Version="4.4.12" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="NLog" Version="5.0.0-beta11" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GodSharp.Logging.Abstractions\GodSharp.Logging.Abstractions.csproj" />
   </ItemGroup>
   <Import Project="..\..\build\common.props" />
 </Project>
