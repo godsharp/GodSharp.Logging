@@ -21,7 +21,7 @@ artifacts:
 test: off
 deploy:
 - provider: NuGet
-  server: https://api.nuget.org/v3/index.json
+  server: https://www.nuget.org/api/v2/package
   api_key:
     secure: s388/c8yQWnGyZ9v9cUDfBe4ud6MFl/ouUEEBruiN5j5+LjSQ4giGKMKuLuvglS1
   artifact: /.*\.nupkg/
