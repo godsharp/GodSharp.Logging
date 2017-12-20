@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>  
-    <AssemblyName>GodSharp.Logging.Abstractions.Test</AssemblyName>
+  <PropertyGroup>
+    <AssemblyName>GodSharp.Logging.NLog.Test</AssemblyName>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
@@ -37,7 +37,17 @@
     <PackageReference Include="xunit" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="NLog.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\..\src\GodSharp.Logging.Abstractions\GodSharp.Logging.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\GodSharp.Logging.NLog\GodSharp.Logging.NLog.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\build\common.props" />

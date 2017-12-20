@@ -9,6 +9,8 @@ namespace GodSharp.Logging.Abstractions
     /// </summary>
     internal class LoggingQueueRunnerInternal
     {
+        private object _lock = new object();
+
         /// <summary>
         /// The que
         /// </summary>
@@ -28,7 +30,7 @@ namespace GodSharp.Logging.Abstractions
         /// The stopping flag.
         /// </summary>
         private bool stopping;
-        
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="LoggingQueueRunner"/> is running.
         /// </summary>
@@ -36,6 +38,14 @@ namespace GodSharp.Logging.Abstractions
         ///   <c>true</c> if running; otherwise, <c>false</c>.
         /// </value>
         public bool Running { get; set; }
+
+        /// <summary>
+        /// Gets the queue count.
+        /// </summary>
+        /// <value>
+        /// The queue count.
+        /// </value>
+        public int QueueCount => queue.Count;
 
         /// <summary>
         /// Gets or sets the executor.
@@ -46,13 +56,21 @@ namespace GodSharp.Logging.Abstractions
         public Action<LoggingBody> Executor { get; set; }
 
         /// <summary>
+        /// The on exception
+        /// </summary>
+        public Action<Exception> OnException { get; set; }
+
+        /// <summary>
         /// Enqueues the specified body.
         /// </summary>
         /// <param name="body">The body.</param>
         public void Enqueue(LoggingBody body)
         {
-            queue.Enqueue(body);
-            me.Set();
+            lock (_lock)
+            {
+                queue.Enqueue(body);
+                me.Set();
+            }
         }
 
         /// <summary>
@@ -92,36 +110,40 @@ namespace GodSharp.Logging.Abstractions
         {
             Running = true;
             stopping = false;
-
-            try
-            {
-                // ReSharper disable once TooWideLocalVariableScope
-                LoggingBody body;
             
-                while (Running && Running)
-                {
-                    me.WaitOne();
+            // ReSharper disable once TooWideLocalVariableScope
+            LoggingBody body;
 
+            while (Running && Running)
+            {
+                me.WaitOne();
+
+                lock (_lock)
+                {
                     do
                     {
-                        body = queue.Dequeue();
-                    
-                        Executor.Invoke(body);
-                    
+                        try
+                        {
+                            body = queue.Dequeue();
+
+                            Executor.Invoke(body);
+                        }
+                        catch (Exception ex)
+                        {
+                            OnException?.Invoke(ex);
+                        }
+
                     } while (queue.Count > 0);
-                
-                    me.Reset();
-                
-                    Thread.Sleep(10);
                 }
+
+                me.Reset();
+
+                Thread.Sleep(10);
             }
-            catch(Exception){}
-            finally
-            {
-                Running = false;
-                stopping = false;
-                thread = null;
-            }
+
+            Running = false;
+            stopping = false;
+            thread = null;
         }
     }
 }

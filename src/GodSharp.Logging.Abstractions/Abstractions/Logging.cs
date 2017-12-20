@@ -84,6 +84,8 @@ namespace GodSharp.Logging.Abstractions
             /// queue enabled
             if (!LoggingQueueRunner.Running)
             {
+                LoggingQueueRunner.SetExecutor(Write);
+
                 while (!LoggingQueueRunner.Running)
                 {
                     LoggingQueueRunner.Start();

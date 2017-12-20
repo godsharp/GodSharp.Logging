@@ -1,10 +1,10 @@
 ﻿<Project>
   <PropertyGroup Condition="'$(AssemblyName)'=='GodSharp.Logging.Abstractions'">
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.0-preview1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0-preview2</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(AssemblyName)'=='GodSharp.Logging.NLog'">
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Version>1.0.0-preview1</Version>
   </PropertyGroup>
 </Project>
