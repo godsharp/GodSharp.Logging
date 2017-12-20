@@ -2,6 +2,9 @@
 
 namespace GodSharp.Logging.Abstractions
 {
+    /// <summary>
+    /// Logging body.
+    /// </summary>
     public struct LoggingBody
     {
         /// <summary>

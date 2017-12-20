@@ -3,7 +3,7 @@
 namespace GodSharp.Logging.Abstractions
 {
     /// <summary>
-    /// Log <see cref="abstract"/> class.
+    /// Log abstract class.
     /// </summary>
     /// <seealso cref="GodSharp.Logging.Abstractions.ILogging" />
     public abstract class Logging : ILogging
@@ -62,26 +62,26 @@ namespace GodSharp.Logging.Abstractions
         /// <param name="exception">The exception.</param>
         public void Write(string log, LoggingLevel type, Exception exception = null)
         {
-            /// logging don't available
+            // logging don't available
             if (!LoggingConfiguration.Available)
             {
                 return;
             }
 
-            /// logging output level is <see cref="LoggingOutputLevel.None"/>,or <param name="type"/> not equal, or <param name="type"/> more than.
+            // logging output level is <see cref="LoggingOutputLevel.None"/>,or <param name="type"/> not equal, or <param name="type"/> more than.
             if (((int)LoggingConfiguration.OutputLevel & (int)type) == 0)
             {
                 return;
             }
 
-            /// queue disabled
+            // queue disabled
             if (!LoggingConfiguration.QueueEnable)
             {
                 WriteInvoke(log, type, exception);
                 return;
             }
 
-            /// queue enabled
+            // queue enabled
             if (!LoggingQueueRunner.Running)
             {
                 LoggingQueueRunner.SetExecutor(Write);

@@ -114,9 +114,14 @@ namespace GodSharp.Logging.Abstractions
             // ReSharper disable once TooWideLocalVariableScope
             LoggingBody body;
 
-            while (Running && Running)
+            while (Running && !stopping)
             {
                 me.WaitOne();
+
+                if (stopping)
+                {
+                    break;
+                }
 
                 lock (_lock)
                 {
