@@ -7,17 +7,16 @@
     <Company>GodSharp</Company>
     <Authors>seayxu</Authors>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://gitlab.com/GodSharp/GodSharp.Logging.git</RepositoryUrl>
-    <PackageProjectUrl>https://gitlab.com/GodSharp/GodSharp.Logging</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/godsharp/GodSharp.Logging.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/godsharp/GodSharp.Logging</PackageProjectUrl>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/26563296</PackageIconUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/godsharp/GodSharp.Logging/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright © GodSharp 2017</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net35;net40;net45;net46;net47;netstandard2.0;</TargetFrameworks>
     <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
     <OutputPath>$(SolutionDir)\output\$(AssemblyName)</OutputPath>
-    <DocumentationFile>$(SolutionDir)\output\$(AssemblyName)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)'=='net35'">
