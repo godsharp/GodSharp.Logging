@@ -17,6 +17,7 @@
     <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net35;net40;net45;net46;net47;netstandard2.0;</TargetFrameworks>
     <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
     <OutputPath>$(SolutionDir)\output\$(AssemblyName)</OutputPath>
+    <DocumentationFile>$(SolutionDir)\output\$(AssemblyName)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)'=='net35'">
@@ -37,11 +38,4 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
     <DefineConstants>CFX;NETSTANDARD2_0;$(AdditionalConstants)</DefineConstants>
   </PropertyGroup>
-  
-  <!--<ItemGroup Condition="'$(TargetFramework)' != 'net40'">
-    <None Remove="App.config" />
-    <None Remove="packages.config" />
-  </ItemGroup>-->
-
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

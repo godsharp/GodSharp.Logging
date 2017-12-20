@@ -46,7 +46,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\src\GodSharp.Logging.Abstractions\GodSharp.Logging.Abstractions.csproj" />
     <ProjectReference Include="..\..\src\GodSharp.Logging.NLog\GodSharp.Logging.NLog.csproj" />
   </ItemGroup>
 
