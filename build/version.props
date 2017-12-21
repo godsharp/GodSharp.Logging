@@ -1,14 +1,14 @@
 ﻿<Project>
   <PropertyGroup Condition="'$(AssemblyName)'=='GodSharp.Logging.Abstractions'">
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
     <FileVersion>1.0.0</FileVersion>
     <DocumentationFile>$(SolutionDir)\output\$(AssemblyName)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(AssemblyName)'=='GodSharp.Logging.NLog'">
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.0-preview1</Version>
-    <FileVersion>1.0.0.1</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0</FileVersion>
     <DocumentationFile>$(SolutionDir)\output\$(AssemblyName)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 </Project>
